@@ -1,6 +1,6 @@
 {
-  "name": "ctre-docs-for-vs-code",
-  "displayName": "CTRE Docs for VS Code",
+  "name": "frc-devtools",
+  "displayName": "FRC Development Tools",
   "description": "Easily view CTRE documentation in VS Code.",
   "version": "0.0.1",
   "engines": {
@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "ctre-docs-for-vs-code.openWebsite",
-        "title": "CTRE Docs: Open website"
+        "command": "frc-devtools.openWebsite",
+        "title": "FRC Dev Tools: Open website"
       }
     ]
   },
