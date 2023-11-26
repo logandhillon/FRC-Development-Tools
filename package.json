@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "frc-devtools.openWebsite",
-        "title": "FRC Dev Tools: Open website"
+        "command": "frc-devtools.openCtreDocs",
+        "title": "FRC Dev Tools: Open CTRE documentation"
       }
     ]
   },
