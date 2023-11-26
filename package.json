@@ -1,7 +1,7 @@
 {
   "name": "frc-devtools",
   "displayName": "FRC Development Tools",
-  "description": "Easily view CTRE documentation in VS Code.",
+  "description": "This is the help text",
   "version": "0.1.0-DEV",
   "engines": {
     "vscode": "^1.84.0"
