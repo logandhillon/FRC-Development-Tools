@@ -1,4 +1,29 @@
 {
+    "public static final": {
+		"prefix": "psf",
+		"body": ["public static final "],
+		"description": ""
+	},
+	"private static final": {
+		"prefix": "prsf",
+		"body": ["private static final "],
+		"description": ""
+	},
+	"private final": {
+		"prefix": "prf",
+		"body": ["private final "],
+		"description": ""
+	},
+	"public static final int": {
+		"prefix": "psfi",
+		"body": ["public static final int "],
+		"description": ""
+	},
+    "public static final double": {
+		"prefix": "psfd",
+		"body": ["public static final double "],
+		"description": ""
+	},
     "FRC Command": {
         "prefix": ["fcmd"],
         "body": [
@@ -14,9 +39,9 @@
             "\tprivate final ${1:Subsystem} ${2:subsystem};",
             "",
             "\tpublic $TM_FILENAME_BASE() {",
-            "\t\tthis.${2:subsystem} = ${1}.getInstance();",
+            "\t\tthis.${2} = ${1}.getInstance();",
             "",
-            "\t\taddRequirements(this.${2:subsystem});",
+            "\t\taddRequirements(this.${2});",
             "\t}",
             "",
             "\t@Override",
