@@ -25,6 +25,12 @@
         "command": "frc-devtools.openCtreDocs",
         "title": "FRC Dev Tools: Open CTRE documentation"
       }
+    ],
+    "snippets": [
+      {
+        "language": "java",
+        "path": "./snippets.json"
+      }
     ]
   },
   "scripts": {
