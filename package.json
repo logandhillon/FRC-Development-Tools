@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/LDMGamingYT/FRC-Development-Tools/issues"
   },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.84.0"
   },
