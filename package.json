@@ -1,8 +1,20 @@
 {
   "name": "frc-devtools",
   "displayName": "FRC Development Tools",
-  "description": "This is the help text",
+  "description": " Tools to aid development with FIRST Robotics programming",
   "version": "0.1.0-DEV",
+  "author": {
+    "name": "LDMGamingYT",
+    "url": "https://github.com/LDMGamingYT"
+  },
+  "repository": {
+    "url": "https://github.com/LDMGamingYT/FRC-Development-Tools.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/LDMGamingYT/FRC-Development-Tools#readme",
+  "bugs": {
+    "url": "https://github.com/LDMGamingYT/FRC-Development-Tools/issues"
+  },
   "engines": {
     "vscode": "^1.84.0"
   },
