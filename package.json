@@ -12,6 +12,14 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "FRC Development Tools",
+      "properties": {
+        "frcDevTools.teamNumber": {
+          "type": "integer"
+        }
+      }
+    },
     "commands": [
       {
         "command": "frc-devtools.openCtreDocs",
