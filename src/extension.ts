@@ -6,9 +6,9 @@ import * as vscode from 'vscode';
  */
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Extension "ctre-docs-for-vs-code" is now active');
-
-	let disposable = vscode.commands.registerCommand('ctre-docs-for-vs-code.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello World from CTRE Docs for VS Code!');
+	
+	let disposable = vscode.commands.registerCommand('ctre-docs-for-vs-code.openWebsite', () => {
+		vscode.window.createWebviewPanel("ctreDocs", "CTRE Docs", vscode.ViewColumn.Active, {});
 	});
 
 	context.subscriptions.push(disposable);

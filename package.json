@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "ctre-docs-for-vs-code.helloWorld",
-        "title": "Hello World"
+        "command": "ctre-docs-for-vs-code.openWebsite",
+        "title": "Open website"
       }
     ]
   },
