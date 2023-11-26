@@ -29,7 +29,7 @@
     "snippets": [
       {
         "language": "java",
-        "path": "./snippets_java.json"
+        "path": "./snippets/java.json"
       }
     ]
   },
