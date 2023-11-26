@@ -15,7 +15,7 @@
     "commands": [
       {
         "command": "ctre-docs-for-vs-code.openWebsite",
-        "title": "Open website"
+        "title": "CTRE Docs: Open website"
       }
     ]
   },
