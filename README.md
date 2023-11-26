@@ -1,6 +1,6 @@
 # FRC Development Tools
 
-This is the help text
+Tools to aid development with FIRST Robotics programming, written in TypeScript.
 
 ## Features
 
