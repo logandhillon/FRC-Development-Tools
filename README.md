@@ -22,7 +22,7 @@ Tools to aid development with FIRST Robotics programming, written in TypeScript.
 
 | Setting     | Path                   | Type | Description                                     |
 | :------------ | ------------------------ | :----- | ------------------------------------------------- |
-| Team Number | frcDevTools.teamNumber | int  | Required for somethings to work for some reason |
+| Team Number | frcDevTools.teamNumber | int  | Required for some things to work for some reason |
 
 ## Here be dragons!
 
