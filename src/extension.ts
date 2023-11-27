@@ -9,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	let disposable = vscode.commands.registerCommand('frc-devtools.openCtreDocs', () => {
 		let panel = vscode.window.createWebviewPanel("ctreDocs", "CTRE Docs", vscode.ViewColumn.Active, {enableScripts: true, enableCommandUris:true, enableForms:true});
-		panel.webview.html = getHtmlForWebpage("https://api.ctr-electronics.com/phoenix6/release/java/");
+		panel.webview.html = getHtmlForWebpage("https://docs.ctr-electronics.com/");
 	});
 
 	context.subscriptions.push(disposable);
