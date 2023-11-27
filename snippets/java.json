@@ -63,7 +63,6 @@
             "\tpublic boolean isFinished() {",
             "\t\treturn false;",
             "\t}",
-            "",
             "}"
         ],
         "description": "Boilerplate code for FRC command"
@@ -78,7 +77,6 @@
             " * @author ${3}",
             " */",
             "public class $TM_FILENAME_BASE extends SubsystemBase {",
-            "",
             "\tpublic $TM_FILENAME_BASE() {",
             "\t\t",
             "\t}",
@@ -94,7 +92,6 @@
             "\t\t// This method will be called once per scheduler run during simulation",
             "\t\t",
             "\t}",
-            "",
             "}"
         ],
         "description": "Boilerplate code for FRC command"
