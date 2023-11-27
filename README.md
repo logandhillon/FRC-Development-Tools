@@ -4,11 +4,25 @@ Tools to aid development with FIRST Robotics programming, written in TypeScript.
 
 ## Features
 
-develop (you're welcome)
+### Snippets
+
+
+| Shortcut   | Description                        |
+| ------------ | ------------------------------------ |
+| fcmd       | Boilerplate code for FRC command   |
+| fsys<br /> | Boilerplate code for FRC subsystem |
+| psf        | `public static final`              |
+| prf        | `private final`                    |
+| prsf       | `private static final`             |
+| psfi       | `public static final int`          |
+| psfd       | `public static final double`       |
 
 ## Extension Settings
 
-you'll figure it out :)
+
+| Setting     | Path                   | Type | Description                                     |
+| :------------ | ------------------------ | :----- | ------------------------------------------------- |
+| Team Number | frcDevTools.teamNumber | int  | Required for somethings to work for some reason |
 
 ## Here be dragons!
 
