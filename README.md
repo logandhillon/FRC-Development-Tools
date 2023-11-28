@@ -4,7 +4,9 @@ Tools to aid development with FIRST Robotics programming, written in TypeScript.
 
 ## Installation Guide
 
-you got this!
+1. Download the VSIX file from the releases tab
+2. Select `Extensions: Install from VSIX...` from the command palette in VS code. You can get to the command palette by pressing `CTRL/CMD` + `SHIFT` + `P`.
+3. Then select the VSIX file you downloaded.
 
 ## Features
 
