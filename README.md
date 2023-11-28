@@ -2,10 +2,13 @@
 
 Tools to aid development with FIRST Robotics programming, written in TypeScript.
 
+## Installation Guide
+
+you got this!
+
 ## Features
 
 ### Snippets
-
 
 | Shortcut   | Description                        |
 | ------------ | ------------------------------------ |
@@ -18,7 +21,6 @@ Tools to aid development with FIRST Robotics programming, written in TypeScript.
 | psfd       | `public static final double`       |
 
 ## Extension Settings
-
 
 | Setting     | Path                   | Type | Description                                     |
 | :------------ | ------------------------ | :----- | ------------------------------------------------- |
