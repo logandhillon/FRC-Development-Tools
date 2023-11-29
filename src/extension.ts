@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Extension "frc-devtools" is now active');
 	
 	let disposable = vscode.commands.registerCommand('frc-devtools.openCtreDocs', () => {
-		let panel = vscode.window.createWebviewPanel("ctreDocs", "CTRE Docs", vscode.ViewColumn.Active, {enableScripts: true, enableCommandUris:true, enableForms:true});
+		let panel = vscode.window.createWebviewPanel("ctreDocs", "CTRE Docs", vscode.ViewColumn.Active, {enableScripts: true});
 		panel.webview.html = getHtmlForWebpage("https://docs.ctr-electronics.com/");
 	});
 
