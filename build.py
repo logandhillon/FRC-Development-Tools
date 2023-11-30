@@ -31,7 +31,7 @@ os.system("vsce package")
 filename = f"frc-devtools-{version}.vsix"
 
 if args.action == "publish":
-    if input("This will create a release from main and publish it immediately, proceed? (Y/n)") == 'n':
+    if input("This will create a release from main and publish it immediately, proceed? (Y/n) ") == 'n':
         exit(0)
 
     owner = 'LDMGamingYT'
