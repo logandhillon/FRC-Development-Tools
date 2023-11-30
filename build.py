@@ -75,7 +75,8 @@ if args.action == "publish":
               
 Try:
 - Checking if a release already exists with that tag
-- Make sure you're connected to the internet""")
+- Make sure you're connected to the internet
+""")
         exit(-1)
 
     url = f"https://api.github.com/repos/{owner}/{repo}/releases/{tag}/assets"
@@ -103,7 +104,7 @@ Try:
         print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully added '{filename}' to release {tag}.")
     else:
         print(f"{Back.RED}{Fore.BLACK} ERROR HTTP {response.status_code} {Style.RESET_ALL} Failed to add '{filename}' to {tag}: {response_json}")
-        print(f"\nAutomatically deleting release {tag}, as adding release asset failed")
+        print(f"\nAutomatically deleting release {tag}, as adding release asset failed\n")
 
         response = requests.delete(
             f'https://api.github.com/repos/{owner}/{repo}/releases/{tag}',
