@@ -16,14 +16,13 @@ parser.add_argument('action', nargs='?', default='build-only', choices=['build-o
 parser.add_argument("-n", "--no-bump", action="store_true", help="build the extension without bumping patch version")
 args = parser.parse_args()
 
-version = "?"
+with open('package.json') as f:
+    data = json.load(f)
+
+version = data['version']
 
 if not args.no_bump:
-    with open('package.json') as f:
-        data = json.load(f)
-
-    version = semver.bump_patch(data['version']) + branch
-    data['version'] = version
+    data['version'] = semver.bump_patch(version) + branch
 
     with open('package.json', 'w') as f:
         json.dump(data, f, indent=4)
