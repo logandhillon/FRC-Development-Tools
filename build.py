@@ -71,7 +71,7 @@ if args.action == "publish":
     if response.status_code == 201:
         print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Release {tag} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
     else:
-        print(f"""{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text} (https://github.com/{owner}/{repo}/releases/tag/{tag})
+        print(f"""{Back.RED}{Fore.BLACK} ERROR HTTP {response.status_code} {Style.RESET_ALL} Failed to create release. Response: {response.text} (https://github.com/{owner}/{repo}/releases/tag/{tag})
               
 Try:
 - Checking if a release already exists with that tag
@@ -102,7 +102,7 @@ Try:
     if response.status_code == 201:
         print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully added '{filename}' to release {tag}.")
     else:
-        print(f"{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to add '{filename}' to {tag}: {response_json}")
+        print(f"{Back.RED}{Fore.BLACK} ERROR HTTP {response.status_code} {Style.RESET_ALL} Failed to add '{filename}' to {tag}: {response_json}")
         print(f"\nAutomatically deleting release {tag}, as adding release asset failed")
 
         response = requests.delete(
@@ -116,4 +116,4 @@ Try:
         if response.status_code == 201:
             print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully deleted release '{tag}'")
         else:
-            print(f"{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to delete release '{tag}'. Delete it manually at https://github.com/{owner}/{repo}/releases/tag/{tag}")
+            print(f"{Back.RED}{Fore.BLACK} ERROR HTTP {response.status_code} {Style.RESET_ALL} Failed to delete release '{tag}'. Delete it manually at https://github.com/{owner}/{repo}/releases/tag/{tag}")
