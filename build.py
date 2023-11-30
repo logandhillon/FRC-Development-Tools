@@ -7,6 +7,7 @@ import semver
 import argparse
 import requests
 from colorama import Fore, Back, Style
+import base64
 
 # This is the hard-coded branch, change whenever applicable
 branch = "-DEV"
@@ -71,3 +72,30 @@ if args.action == "publish":
         print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Release {tag} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
     else:
         print(f'{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text}')
+        exit(-1)
+
+    url = f"https://api.github.com/repos/{owner}/{repo}/releases/{tag}/assets"
+
+    print (f"\nAttempting to add {filename} to {tag}")
+
+    with open(filename, 'rb') as file:
+        binary_data = file.read()
+    binary_data = base64.b64encode(binary_data)
+    print("\nFile encoded successfully")
+
+    headers = {
+        'Authorization': f'token {token}',
+        'Content-Type': 'application/octet-stream',
+    }
+
+    params = {
+        'name': filename
+    }
+
+    response = requests.post(url, headers=headers, params=params, data=binary_data)
+    response_json = json.loads(response.text)
+
+    if response.status_code == 201:
+        print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully added '{filename}' to release {tag}.")
+    else:
+        print(f"{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to add '{filename}' to {tag}: {response_json}")
