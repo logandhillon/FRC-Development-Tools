@@ -81,7 +81,7 @@ if args.action == "publish":
     with open(filename, 'rb') as file:
         binary_data = file.read()
     binary_data = base64.b64encode(binary_data)
-    print("\n{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} File encoded successfully")
+    print(f"\n{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} File encoded successfully")
 
     headers = {
         'Authorization': f'token {token}',
