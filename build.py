@@ -48,7 +48,7 @@ if args.action == "publish":
 
     payload = {
         'tag_name': 'v' + version,
-        'target_commitish': 'HEAD',
+        'target_commitish': 'main',
         'body': release_body,
         'draft': False,
         'prerelease': prerelease
