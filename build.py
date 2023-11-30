@@ -12,7 +12,7 @@ from colorama import Fore, Back, Style
 branch = "-DEV"
 
 parser = argparse.ArgumentParser()
-parser.add_argument('action', nargs='?', default='build-onlu', choices=['build-only', 'publish'], help='action to perform')
+parser.add_argument('action', nargs='?', default='build-only', choices=['build-only', 'publish'], help='action to perform')
 parser.add_argument("-n", "--no-bump", action="store_true", help="build the extension without bumping patch version")
 args = parser.parse_args()
 
