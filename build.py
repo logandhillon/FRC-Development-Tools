@@ -49,9 +49,10 @@ if args.action == "publish":
         'Authorization': f'Token {token}'
     }
 
+    tag = 'v' + version
     payload = {
-        'name': 'v' + version,
-        'tag_name': 'v' + version,
+        'name': tag,
+        'tag_name': tag,
         'target_commitish': 'main',
         'body': release_body,
         'draft': False,
@@ -67,6 +68,6 @@ if args.action == "publish":
     )
 
     if response.status_code == 201:
-        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Release created successfully. (version {version})')
+        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Release {version} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
     else:
         print(f'{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text}')
