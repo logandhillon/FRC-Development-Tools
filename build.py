@@ -12,6 +12,8 @@ import base64
 # This is the hard-coded branch, change whenever applicable
 branch = "-DEV"
 
+# TODO: #10 Make this more object-oriented
+
 parser = argparse.ArgumentParser()
 parser.add_argument('action', nargs='?', default='build-only', choices=['build-only', 'publish'], help='action to perform')
 parser.add_argument("-n", "--no-bump", action="store_true", help="build the extension without bumping patch version")
