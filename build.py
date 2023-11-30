@@ -69,7 +69,7 @@ if args.action == "publish":
     )
 
     if response.status_code == 201:
-        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Release {tag} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
+        print(f'{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} Release {tag} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
     else:
         print(f'{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text}')
         exit(-1)
@@ -81,7 +81,7 @@ if args.action == "publish":
     with open(filename, 'rb') as file:
         binary_data = file.read()
     binary_data = base64.b64encode(binary_data)
-    print("\nFile encoded successfully")
+    print("\n{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} File encoded successfully")
 
     headers = {
         'Authorization': f'token {token}',
@@ -96,6 +96,6 @@ if args.action == "publish":
     response_json = json.loads(response.text)
 
     if response.status_code == 201:
-        print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully added '{filename}' to release {tag}.")
+        print(f"{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} Successfully added '{filename}' to release {tag}.")
     else:
         print(f"{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to add '{filename}' to {tag}: {response_json}")
