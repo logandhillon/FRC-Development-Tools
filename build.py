@@ -11,13 +11,13 @@ import requests
 branch = "-DEV"
 
 parser = argparse.ArgumentParser()
-parser.add_argument('action', nargs='?', default='build', choices=['build', 'publish'], help='Action to perform')
-parser.add_argument("-b", "--build-only", action="store_true", help="build the extension without bumping patch version")
+parser.add_argument('action', nargs='?', default='build-onlu', choices=['build-only', 'publish'], help='action to perform')
+parser.add_argument("-n", "--no-bump", action="store_true", help="build the extension without bumping patch version")
 args = parser.parse_args()
 
 version = "?"
 
-if not args.build_only:
+if not args.no_bump:
     with open('package.json') as f:
         data = json.load(f)
 
