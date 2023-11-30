@@ -36,7 +36,7 @@ if args.action == "publish":
     repo = 'FRC-Development-Tools'
     print (f"\nPreparing to create release on {owner}/{repo}\n")
 
-    release_body = input("Release body? (Markdown is supported)\n")
+    release_body = input(f"{Style.BRIGHT}Release body? (Markdown is supported){Style.RESET_ALL}\n")
     print('\n')
     with open("GH_TOKEN", 'r') as f:
         token = f.read()
