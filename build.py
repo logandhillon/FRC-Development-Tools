@@ -68,6 +68,6 @@ if args.action == "publish":
     )
 
     if response.status_code == 201:
-        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Release {version} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
+        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Release {tag} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
     else:
         print(f'{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text}')
