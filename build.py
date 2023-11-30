@@ -88,7 +88,7 @@ Try:
     print(f"\n{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} File encoded successfully\n")
 
     headers = {
-        'Authorization': f'token {token}',
+        'Authorization': f'Token {token}',
         'Content-Type': 'application/octet-stream',
     }
 
@@ -103,3 +103,17 @@ Try:
         print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully added '{filename}' to release {tag}.")
     else:
         print(f"{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to add '{filename}' to {tag}: {response_json}")
+        print(f"\nAutomatically deleting release {tag}, as adding release asset failed")
+
+        response = requests.delete(
+            f'https://api.github.com/repos/{owner}/{repo}/releases/{tag}',
+            headers = {
+                'Authorization': f'Token {token}',
+            },
+            data=json.dumps(payload)
+        )
+
+        if response.status_code == 201:
+            print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully deleted release '{tag}'")
+        else:
+            print(f"{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to delete release '{tag}'. Delete it manually at https://github.com/{owner}/{repo}/releases/tag/{tag}")
