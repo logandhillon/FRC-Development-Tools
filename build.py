@@ -108,15 +108,22 @@ Try:
         print(f"{Back.RED}{Fore.BLACK} ERROR HTTP {response.status_code} {Style.RESET_ALL} Failed to add '{filename}' to {tag}: {response_json}")
         print(f"\nAutomatically deleting release {tag}, as adding release asset failed\n")
 
+        release_id_response = requests.get(
+                f'https://api.github.com/repos/{owner}/{repo}/releases/tags/{tag}',
+                headers = {
+                    'Authorization': f'Token {token}',
+                },  
+            )
+
         response = requests.delete(
-            f'https://api.github.com/repos/{owner}/{repo}/releases/{tag}',
+            release_id_response.json()['url'],
             headers = {
                 'Authorization': f'Token {token}',
             },
             data=json.dumps(payload)
         )
 
-        if response.status_code == 201:
+        if response.status_code == 201: # TODO: Fix this to check for all 200 codes, not just 201
             print(f"{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL} Successfully deleted release '{tag}'")
         else:
             print(f"{Back.RED}{Fore.BLACK} ERROR HTTP {response.status_code} {Style.RESET_ALL} Failed to delete release '{tag}'. Delete it manually at https://github.com/{owner}/{repo}/releases/tag/{tag}")
