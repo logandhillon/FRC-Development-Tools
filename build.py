@@ -34,6 +34,7 @@ filename = f"frc-devtools-{version}.vsix"
 if args.action == "publish":
     owner = 'LDMGamingYT'
     repo = 'FRC-Development-Tools'
+    prerelease = True
     print (f"\nPreparing to create release on {owner}/{repo}\n")
 
     release_body = input(f"{Style.BRIGHT}Release body? (Markdown is supported){Style.RESET_ALL}\n")
@@ -51,7 +52,7 @@ if args.action == "publish":
         'target_commitish': 'HEAD',
         'body': release_body,
         'draft': False,
-        'prerelease': False
+        'prerelease': prerelease
     }
 
     print("Sending payload:", payload, '\n')
