@@ -71,7 +71,11 @@ if args.action == "publish":
     if response.status_code == 201:
         print(f'{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} Release {tag} created successfully. (https://github.com/{owner}/{repo}/releases/tag/{tag})')
     else:
-        print(f'{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text} (https://github.com/{owner}/{repo}/releases/tag/{tag})')
+        print(f"""{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text} (https://github.com/{owner}/{repo}/releases/tag/{tag})
+              
+Try:
+- Checking if a release already exists with that tag
+- Make sure you're connected to the internet""")
         exit(-1)
 
     url = f"https://api.github.com/repos/{owner}/{repo}/releases/{tag}/assets"
@@ -81,7 +85,7 @@ if args.action == "publish":
     with open(filename, 'rb') as file:
         binary_data = file.read()
     binary_data = base64.b64encode(binary_data)
-    print(f"\n{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} File encoded successfully")
+    print(f"\n{Back.GREEN}{Fore.BLACK} OK {Style.RESET_ALL} File encoded successfully\n")
 
     headers = {
         'Authorization': f'token {token}',
