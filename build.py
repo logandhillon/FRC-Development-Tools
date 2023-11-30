@@ -40,13 +40,11 @@ if args.action == "publish":
     with open("GH_TOKEN", 'r') as f:
         token = f.read()
 
-    # Set the required request headers
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'Token {token}'
     }
 
-    # Construct the release payload
     payload = {
         'tag_name': version,
         'target_commitish': 'HEAD',
@@ -57,14 +55,12 @@ if args.action == "publish":
 
     print("Sending payload:", payload, '\n')
 
-    # Send the API request to create the release
     response = requests.post(
         f'https://api.github.com/repos/{owner}/{repo}/releases',
         headers=headers,
         data=json.dumps(payload)
     )
 
-    # Check the response status code
     if response.status_code == 201:
         print('Release created successfully.')
     else:
