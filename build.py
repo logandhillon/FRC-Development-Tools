@@ -6,6 +6,7 @@ import json
 import semver
 import argparse
 import requests
+from colorama import Fore, Back, Style
 
 # This is the hard-coded branch, change whenever applicable
 branch = "-DEV"
@@ -62,6 +63,6 @@ if args.action == "publish":
     )
 
     if response.status_code == 201:
-        print('Release created successfully.')
+        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL}Release created successfully.')
     else:
-        print(f'Failed to create release. Response: {response.text}')
+        print(f'{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text}')
