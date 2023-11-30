@@ -64,6 +64,6 @@ if args.action == "publish":
     )
 
     if response.status_code == 201:
-        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL}Release created successfully.')
+        print(f'{Back.GREEN}{Fore.BLACK} DONE {Style.RESET_ALL}Release created successfully. (version {version})')
     else:
         print(f'{Back.RED}{Fore.BLACK} ERROR {Style.RESET_ALL} Failed to create release. Response: {response.text}')
