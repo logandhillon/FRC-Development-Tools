@@ -33,13 +33,20 @@ if not args.no_bump:
 os.system("vsce package")
 filename = f"frc-devtools-{version}.vsix"
 
-if args.action == "publish":
-    if input("This will create a release from main and publish it immediately, proceed? (Y/n) ") == 'n':
-        exit(0)
+class Publisher:
+    def __init__(self, owner, repo, isPreRelease):
+        self.owner = owner
+        self.repo = repo
+        self.prerelease = isPreRelease
 
-    owner = 'LDMGamingYT'
-    repo = 'FRC-Development-Tools'
-    prerelease = True
+    def listRelease(self):
+        print("todo lmao")
+
+if args.action == "publish":
+    if input("This will create a release from main and publish it immediately, proceed? (Y/n) ") == 'n': exit(0)
+
+    publisher = Publisher("LDMGamingYT", "FRC-Development-Tools", True)
+
     print (f"\nPreparing to create release on {owner}/{repo}\n")
 
     release_body = input(f"{Style.BRIGHT}Release body? (Markdown is supported){Style.RESET_ALL}\n")
